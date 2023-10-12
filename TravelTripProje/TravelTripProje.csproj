@@ -139,6 +139,7 @@
     <Compile Include="Models\Siniflar\AdresBlog.cs" />
     <Compile Include="Models\Siniflar\AnaSayfa.cs" />
     <Compile Include="Models\Siniflar\Blog.cs" />
+    <Compile Include="Models\Siniflar\BlogYorum.cs" />
     <Compile Include="Models\Siniflar\Context.cs" />
     <Compile Include="Models\Siniflar\Hakkimizda.cs" />
     <Compile Include="Models\Siniflar\iletisim.cs" />
@@ -161,10 +162,12 @@
     <Content Include="web 2\css\bootstrap.css" />
     <Content Include="web 2\css\style.css" />
     <Content Include="web 2\images\avatar.png" />
+    <Content Include="web 2\images\baharatlar.jpeg" />
     <Content Include="web 2\images\icon3.png" />
     <Content Include="web 2\images\logo.jpg" />
     <Content Include="web 2\images\man.jpg" />
     <Content Include="web 2\images\more.png" />
+    <Content Include="web 2\images\paris.jpeg" />
     <Content Include="web 2\images\post1.jpg" />
     <Content Include="web 2\images\post2.jpg" />
     <Content Include="web 2\images\post3.jpg" />
@@ -243,6 +246,10 @@
     <Content Include="Views\Default\About.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Blog\BlogDetay.cshtml" />
+    <Content Include="Views\Default\Partial1.cshtml" />
+    <Content Include="Views\Default\Partial2.cshtml" />
+    <Content Include="Views\Default\Partial3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

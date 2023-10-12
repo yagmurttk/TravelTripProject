@@ -1,7 +1,7 @@
 ﻿@model TravelTripProje.Models.Siniflar.BlogYorum
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "BlogDetay";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -14,6 +14,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
+    <title>Personal Blog a Blogging Category Flat Bootstarp  Responsive Website Template | Single :: w3layouts</title>
     <link href="~/web 2/css/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="~/web 2/css/style.css" rel='stylesheet' type='text/css' />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,44 +26,62 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
     <!----//webfonts---->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--end slider -->  
 </head>
 <body>
     <!---header---->
     <div class="header">
-        <div class="container">
-            <!---start-top-nav---->
-            <div class="clearfix"></div>
-            <!---//End-top-nav---->
-        </div>
     </div>
     <!--/header-->
     <div class="single">
         <div class="container">
             <div class="col-md-8 single-main">
-                @foreach (var x in Model.Deger1)
-                {
-                    <div class="single-grid">
-                        <img src="@x.BlogImage" alt="" style="margin-bottom:20px" />
-                        <a href="/Blog/BlogDetay/@x.ID">@x.Baslik</a>
-                        <p>
-                            @x.Aciklama
-                        </p>
-                    </div>
-                    <br /><br />
-                }
-            </div>
-            <div class="col-md-4 side-content">
-                <div class="recent">
-                    <h3>Son Bloglar</h3>
-                    @foreach (var y in Model.Deger3)
+                <div class="single-grid">
+                    @foreach (var x in Model.Deger1)
                     {
-                    <ul>
-                        <li><a href="/Blog/BlogDetay/@y.ID">@y.Baslik</a></li>
-                    </ul>
+                    <img src="@x.BlogImage" alt=""style="margin-bottom:20px" />
+                    <h2>@x.Baslik</h2>
+                    <p>
+                        @x.Aciklama
+                    </p>
                     }
                 </div>
+                @foreach (var y in Model.Deger2)
+                {
+                <ul class="comment-list">
+                    <li>
+                        <img src="~/web 2/images/avatar.png" class="img-responsive" alt="">
+                        <div class="desc">
+                            <p>@y.KullaniciAdi: @y.Yorum</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                </ul>
+                }
+                <div class="content-form">
+                    <h3>Yorum yazınız</h3>
+                    <form>
+                        <input type="text" placeholder="Kullanıcı Adı" required />
+                        <input type="text" placeholder="Mail" required />
+                        <textarea placeholder="Yorum"></textarea>
+                        <input type="submit" value="Gönder" />
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-4 side-content">
+                <div class="recent">
+                    <h3>RECENT POSTS</h3>
+                    <ul>
+                        <li><a href="#">Aliquam tincidunt mauris</a></li>
+                        <li><a href="#">Vestibulum auctor dapibus  lipsum</a></li>
+                        <li><a href="#">Nunc dignissim risus consecu</a></li>
+                        <li><a href="#">Cras ornare tristiqu</a></li>
+                    </ul>
+                </div>
                 <div class="comments">
-                    <h3>Son Yorumlar</h3>
+                    <h3>RECENT COMMENTS</h3>
                     <ul>
                         <li><a href="#">Amada Doe </a> on <a href="#">Hello World!</a></li>
                         <li><a href="#">Peter Doe </a> on <a href="#"> Photography</a></li>
@@ -73,5 +92,5 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="clearfix"></div>
         </div>
     </div>
-</body>
+    </body>
 </html>
