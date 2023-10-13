@@ -23,7 +23,7 @@ namespace TravelTripProje.Controllers
         }
         public PartialViewResult Partial1()
         {
-            var degerler = c.Blogs.OrderByDescending(x=>x.ID).Take(2).ToList();
+            var degerler = c.Blogs.OrderByDescending(x => x.ID).Take(2).ToList();
             return PartialView(degerler);
         }
         public PartialViewResult Partial2()
@@ -33,7 +33,17 @@ namespace TravelTripProje.Controllers
         }
         public PartialViewResult Partial3()
         {
-            var deger = c.Blogs.ToList();
+            var deger = c.Blogs.Take(10).ToList();
+            return PartialView(deger);
+        }
+        public PartialViewResult Partial4()
+        {
+            var deger = c.Blogs.Take(3).ToList();
+            return PartialView(deger);
+        }
+        public PartialViewResult Partial5()
+        {
+            var deger = c.Blogs.Take(3).OrderByDescending(x => x.ID).ToList();
             return PartialView(deger);
         }
     }
