@@ -27,7 +27,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
     <!----//webfonts---->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <!--end slider -->  
+    <!--end slider -->
 </head>
 <body>
     <!---header---->
@@ -40,49 +40,51 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="single-grid">
                     @foreach (var x in Model.Deger1)
                     {
-                    <img src="@x.BlogImage" alt=""style="margin-bottom:20px" />
-                    <h2>@x.Baslik</h2>
-                    <p>
-                        @x.Aciklama
-                    </p>
+                        <img src="@x.BlogImage" alt="" style="margin-bottom:20px" />
+                        <h2>@x.Baslik</h2>
+                        <p>
+                            @x.Aciklama
+                        </p>
                     }
                 </div>
                 @foreach (var y in Model.Deger2)
                 {
-                <ul class="comment-list">
-                    <li>
-                        <img src="~/web 2/images/avatar.png" class="img-responsive" alt="">
-                        <div class="desc">
-                            <p>@y.KullaniciAdi: @y.Yorum</p>
-                        </div>
-                        <div class="clearfix"></div>
-                    </li>
-                </ul>
+                    <ul class="comment-list">
+                        <li>
+                            <img src="~/web 2/images/avatar.png" class="img-responsive" alt="">
+                            <div class="desc">
+                                <p>@y.KullaniciAdi: @y.Yorum</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
+                    </ul>
                 }
-                @Html.Action("YorumYap","Blog")
+                @Html.Action("YorumYap", "Blog")
             </div>
 
             <div class="col-md-4 side-content">
                 <div class="recent">
-                    <h3>RECENT POSTS</h3>
+                    <h3>Son Bloglar</h3>
                     <ul>
-                        <li><a href="#">Aliquam tincidunt mauris</a></li>
-                        <li><a href="#">Vestibulum auctor dapibus  lipsum</a></li>
-                        <li><a href="#">Nunc dignissim risus consecu</a></li>
-                        <li><a href="#">Cras ornare tristiqu</a></li>
+                        @foreach (var y in Model.Deger3)
+                        {
+                            <li><a href="/Blog/BlogDetay/@y.ID">@y.Baslik</a></li>
+                        }
                     </ul>
+
                 </div>
                 <div class="comments">
-                    <h3>RECENT COMMENTS</h3>
+                    <h3>Son Yorumlar</h3>
                     <ul>
-                        <li><a href="#">Amada Doe </a> on <a href="#">Hello World!</a></li>
-                        <li><a href="#">Peter Doe </a> on <a href="#"> Photography</a></li>
-                        <li><a href="#">Steve Roberts  </a> on <a href="#">HTML5/CSS3</a></li>
+                        @foreach (var item in Model.Deger4)
+                        {
+                            <li><a href="/Blog/BlogDetay/@item.BlogID">@item.KullaniciAdi -&nbsp;</a><a href="/Blog/BlogDetay/@item.BlogID"> @item.Yorum </a></li>
+                        }
                     </ul>
                 </div>
             </div>
             <div class="clearfix"></div>
         </div>
     </div>
-    </body>
+</body>
 </html>
